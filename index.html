@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影选票</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #8a2020;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
+            height: 700px;
+            border: 3px solid #fff;
+            flex-direction: column;
+        }
+
+        ul {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul li {
+            float: left;
+            width: 120px;
+            height: 50px;
+            background-color: #868686;
+            margin: 22px;
+            border: 2px solid #000;
+            font-size: 16px;
+            color: #000;
+            font-weight: 600;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 8px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        ul li:hover {
+            box-shadow: inset 5px 5px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .bottom {
+            background-color: #000;
+            width: 284px;
+            height: 100px;
+            border: 2px solid #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: move;
+        }
+
+        .active {
+            background-color: #e08309;
+            color: #fff;
+            border: 2px solid #fff;
+            box-shadow: inset 5px 5px 2px rgba(0, 0, 0, 0.3);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+            <li>空</li>
+        </ul>
+        <div class="bottom">屏幕中央</div>
+    </div>
+    <script>
+        const lis = document.querySelectorAll('ul li');
+        lis.forEach(li => {
+            var flag = 0;
+
+            li.addEventListener('click', () => {
+                if (flag == 0) {
+                    li.classList.toggle('active');
+                    li.innerHTML = '座位已选';
+                    flag = 1;
+                } else {
+                    li.classList.toggle('active');
+
+                    li.innerHTML = '空';
+                    flag = 0;
+                }
+
+            })
+            li.addEventListener('dblclick', () => {
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+            })
+        })
+    </script>
+</body>
+
+</html>
